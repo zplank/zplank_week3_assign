@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	// define data
+	// insert data
 	data := [][]float64{
 		{10, 8.04, 10, 9.14, 10, 7.46, 8, 6.58},
 		{8, 6.95, 8, 8.14, 8, 6.77, 8, 5.76},
@@ -27,7 +27,6 @@ func main() {
 		x := make([]float64, len(data))
 		y := make([]float64, len(data))
 
-		// Extract x and y values
 		for j := 0; j < len(data); j++ {
 			x[j] = data[j][i]
 			y[j] = data[j][i+1]
@@ -36,15 +35,15 @@ func main() {
 		// create regression model
 		model := new(regression.Regression)
 
-		// Add data points to the model
+		// add xi and yi data to model
 		for j := 0; j < len(x); j++ {
 			model.Train(regression.DataPoint(y[j], []float64{x[j]}))
 		}
 
-		// Run the regression
+		// run regression
 		model.Run()
 
-		// Print the results
+		// print results
 		fmt.Printf("Regression Analysis for y%d ~ x%d:\n", i/2+1, i/2+1)
 		fmt.Println("Coefficients:", model.Coeff)
 		fmt.Println("R-squared:", model.R2)
