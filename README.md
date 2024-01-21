@@ -34,6 +34,8 @@ R		| 0.6665 | 0.6662 | 0.6663 | 0.6667
 ------------------------------------------		
 Go 		| 0.6665 | 0.6662 | 0.6663 | 0.6667	
 
---insert stats about timing 
 
-Overall, my recommendation would be to begin utilizing Go across the company. These tests determined that simple linear regression models is possible using Go perform similarly between all languages. One thing to take into consideration with utilizing Go to replace Python or R is that these tests were only performed on simple linear regression models and not more complex models. Go packages could differ in how models perform when multiple variables are introduced. 
+When it comes to execution times between Go, Python, and R, Python and R are almost instatneous whereas Go is not. Go takes around 7-10 seconds per model and similarly, the overall model took approximately 7.5 seconds to execute. When comparing the three programs, Go is the slowest to execute basic queries. 
+
+
+Overall, my recommendation would be to begin utilizing Go across the company. These tests determined that simple linear regression models is possible using Go perform similarly between all languages. One thing to take into consideration with utilizing Go to replace Python or R is that these tests were only performed on simple linear regression models and not more complex models. Go packages could differ in how models perform when multiple variables are introduced. In addition, execution times lagged with Go when testing on these simple models. That being said, 7-10 seconds is not a dealbreaker when it comes to executing queries and these times could differ across all three programs when testing on different types of models. If the endgoal is to push everyone to utilize the same programing language, Go has proven that it is capable to handle linear regression models, producing the same output as Python and R.  
